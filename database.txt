@@ -1,0 +1,28 @@
+CREATE TABLE `pollution`.`record` ( `fname` VARCHAR(30) NOT NULL ,  `toutlets` INT(3) NOT NULL ,  `pno` VARCHAR(20) NOT NULL ,  `sno` VARCHAR(10) NOT NULL ,  `email` VARCHAR(40) NOT NULL ,  `address` VARCHAR(50) NOT NULL ,  `ps` VARCHAR(20) NOT NULL ,  `psw` VARCHAR(20) NOT NULL ,    PRIMARY KEY  (`sno`));
+​
+CREATE TABLE `pollution`.`s01day` (
+  `SID` VARCHAR(4) NOT NULL,
+  `gasname` VARCHAR(5) NOT NULL,
+  `gasvalue` INT(5) NOT NULL,
+  `remarks` VARCHAR(10) NOT NULL,
+  PRIMARY KEY (`SID`, `gasname`),
+  FOREIGN KEY (`SID`) REFERENCES `pollution`.`record`(`sno`) ON DELETE CASCADE
+);
+
+CREATE TABLE `pollution`.`s01week` ( `SID` VARCHAR(4) NOT NULL , `week_day` DATE NOT NULL , `gasvalue` BIGINT(5) NOT NULL , `remarks` VARCHAR(10) NOT NULL , PRIMARY KEY (`SID`, `week_day`) ,FOREIGN KEY (`SID`) REFERENCES `pollution`.`record`(`sno`) ON DELETE CASCADE
+);
+
+CREATE TABLE `pollution`.`s02day` (
+  `SID` VARCHAR(4) NOT NULL,
+  `gasname` VARCHAR(5) NOT NULL,
+  `gasvalue` INT(5) NOT NULL,
+  `remarks` VARCHAR(10) NOT NULL,
+  PRIMARY KEY (`SID`, `gasname`),
+  FOREIGN KEY (`SID`) REFERENCES `pollution`.`record`(`sno`) ON DELETE CASCADE
+);
+
+
+CREATE TABLE `pollution`.`s02week` ( `SID` VARCHAR(4) NOT NULL , `week_day` DATE NOT NULL , `gasvalue` BIGINT(5) NOT NULL , `remarks` VARCHAR(10) NOT NULL , PRIMARY KEY (`SID`, `week_day`) ,FOREIGN KEY (`SID`) REFERENCES `pollution`.`record`(`sno`) ON DELETE CASCADE
+);
+
+CREATE TABLE `pollution`.`account` ( `sno` VARCHAR(10) NOT NULL ) ;
