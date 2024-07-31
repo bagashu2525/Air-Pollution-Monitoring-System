@@ -181,13 +181,13 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
     //set port to connect smtp
         $mail->Port="587";
     //set gmail username
-        $mail->Username="bagasmita25@gmail.com";
+        $mail->Username="...";
     //set gmail password
-        $mail->Password="kuplwnjgwesdzede";
+        $mail->Password="...";
     //set email subject
         $mail->Subject="Emission is large";
     //set semder email
-        $mail->setFrom("bagasmita25@gmail.com");
+        $mail->setFrom("...");
     //email body
         $mail->Body="You should look after your emission unless we have to take definite action";
     //add resipient
